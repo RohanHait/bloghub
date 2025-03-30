@@ -1,5 +1,4 @@
 import { getArticle } from '@/app/utils/blog';
-import { BlogPost } from '@/app/utils/blogDataTypes';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ArticleContent from '@/app/components/ArticleContent';
