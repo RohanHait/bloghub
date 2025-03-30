@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light theme (Tokyo Night Day) */
+  --background: #f5f5f5;
+  --foreground: #1a1b26;
+  --primary: #1a1b26;
+  --secondary: #414868;
+  --accent: #7aa2f7;
+  --muted: #565f89;
+  --border: #414868;
+  --card-bg: #ffffff;
+  --card-border: #414868;
+  --hover-bg: #e5e5e5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  /* Dark theme (OneDark) */
+  --background: #1a1b26;
+  --foreground: #c0caf5;
+  --primary: #c0caf5;
+  --secondary: #a9b1d6;
+  --accent: #7aa2f7;
+  --muted: #565f89;
+  --border: #414868;
+  --card-bg: #24283b;
+  --card-border: #414868;
+  --hover-bg: #2f3549;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+  background-color: var(--hover-bg);
 }

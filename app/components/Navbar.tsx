@@ -7,12 +7,12 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="bg-white dark:bg-[#1a1b26] shadow-md transition-colors duration-200">
+    <nav className="bg-background shadow-md transition-colors duration-200 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-gray-800 dark:text-[#a9b1d6]">BlogHub</span>
+            <span className="text-2xl font-bold text-primary">BlogHub</span>
           </Link>
 
           {/* Search Bar */}
@@ -21,11 +21,11 @@ export default function Navbar() {
               <input
                 type="text"
                 placeholder="Search articles..."
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-[#24283b] dark:border-[#414868] dark:text-[#c0caf5] dark:placeholder-[#565f89]"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent bg-card-bg border-card-border text-primary placeholder-muted"
               />
               <button className="absolute right-3 top-1/2 -translate-y-1/2">
                 <svg
-                  className="w-5 h-5 text-gray-500 dark:text-[#565f89]"
+                  className="w-5 h-5 text-muted"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -44,24 +44,24 @@ export default function Navbar() {
           {/* Navigation Links and Theme Toggle */}
           <div className="flex items-center space-x-6">
             <div className="hidden md:flex space-x-6">
-              <Link href="/" className="text-gray-600 dark:text-[#a9b1d6] hover:text-gray-900 dark:hover:text-[#c0caf5]">
+              <Link href="/" className="text-secondary hover:text-primary transition-colors duration-200">
                 Home
               </Link>
-              <Link href="/about" className="text-gray-600 dark:text-[#a9b1d6] hover:text-gray-900 dark:hover:text-[#c0caf5]">
+              <Link href="/about" className="text-secondary hover:text-primary transition-colors duration-200">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-600 dark:text-[#a9b1d6] hover:text-gray-900 dark:hover:text-[#c0caf5]">
+              <Link href="/contact" className="text-secondary hover:text-primary transition-colors duration-200">
                 Contact
               </Link>
             </div>
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#24283b] transition-colors duration-200"
+              className="p-2 rounded-lg hover:bg-hover-bg transition-colors duration-200"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
                 <svg
-                  className="w-5 h-5 text-gray-600"
+                  className="w-5 h-5 text-secondary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -75,7 +75,7 @@ export default function Navbar() {
                 </svg>
               ) : (
                 <svg
-                  className="w-5 h-5 text-[#c0caf5]"
+                  className="w-5 h-5 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -93,7 +93,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button className="text-gray-600 dark:text-[#a9b1d6] hover:text-gray-900 dark:hover:text-[#c0caf5]">
+            <button className="text-secondary hover:text-primary transition-colors duration-200">
               <svg
                 className="h-6 w-6"
                 fill="none"
