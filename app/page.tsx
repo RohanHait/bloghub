@@ -8,7 +8,7 @@ export default async function HomePage() {
   return (
     <main className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Latest Blog Posts</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex flex-col gap-4 max-w-3xl mx-auto">
         {articles.map((post: BlogPost) => (
           <article key={post.id} className="border rounded-lg overflow-hidden shadow-lg">
             {post.cover_image && (
