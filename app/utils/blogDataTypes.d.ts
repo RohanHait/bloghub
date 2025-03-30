@@ -15,8 +15,8 @@ export interface BlogPost {
     cover_image?: string | null;
     readable_publish_date?: string;
     social_image?: string | null;
-    tag_list?: string[];
-    tags?: string;
+    tag_list?: string[] | string;
+    tags?: string[] | string;
     slug?: string;
     path?: string;
     canonical_url?: string;
@@ -29,5 +29,7 @@ export interface BlogPost {
     last_comment_at?: string;
     published_timestamp?: string;
     reading_time_minutes?: number;
+    body_html?: string;
+    body_markdown?: string;
   }
   
